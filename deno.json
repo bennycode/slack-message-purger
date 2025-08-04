@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "@slack/web-api": "npm:@slack/web-api@^7.9.3"
+  },
+  "tasks": {
+    "start": "deno run --allow-all main.ts"
+  }
+}
