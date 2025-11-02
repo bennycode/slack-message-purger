@@ -47,7 +47,12 @@ This Deno-based script helps you bulk delete all messages you've sent in a Slack
    - `mpim:history` - View messages in group direct messages
    - `mpim:read` - View basic information about group direct messages
 
-### 3. Configure the Script
+### 3. Install App
+
+1. Go to **Settings** and **Install App**
+2. Once installed, you will see your **User OAuth Token** (starting with "xoxp-")
+
+### 4. Configure the Script
 
 1. Open `main.ts` in your editor
 2. Replace the placeholder token:
@@ -55,6 +60,6 @@ This Deno-based script helps you bulk delete all messages you've sent in a Slack
    const USER_TOKEN = "xoxp-your-actual-token-here";
    ```
 
-### 4. Customize Message Types (Optional)
+### 5. Customize Message Types (Optional)
 
 You can modify which types of conversations to process by changing the `MESSAGE_TYPES_TO_DELETE` constant.
