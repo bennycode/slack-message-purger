@@ -12,7 +12,7 @@ async function purgeMySlackMessages(): Promise<void> {
     const user = await getCurrentUser(web);
     const conversations = await getAllConversations(
       web,
-      MESSAGE_TYPES_TO_DELETE
+      MESSAGE_TYPES_TO_DELETE,
     );
 
     if (conversations.length === 0) {

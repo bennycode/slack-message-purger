@@ -1,7 +1,4 @@
-import {
-  type ConversationsListResponse,
-  WebClient
-} from "@slack/web-api";
+import { type ConversationsListResponse, WebClient } from "@slack/web-api";
 
 export async function getAllConversations(web: WebClient, types: string) {
   const allConversations: ConversationsListResponse["channels"] = [];

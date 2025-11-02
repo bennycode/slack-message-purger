@@ -8,7 +8,7 @@ export async function getUserRepliesFromThreads(
   web: WebClient,
   channelId: string,
   threadedMessages: NonNullable<ConversationsHistoryResponse["messages"]>,
-  userId: string
+  userId: string,
 ): Promise<NonNullable<ConversationsRepliesResponse["messages"]>> {
   const myReplies: NonNullable<ConversationsRepliesResponse["messages"]> = [];
 
@@ -17,7 +17,7 @@ export async function getUserRepliesFromThreads(
   }
 
   console.log(
-    `  🧵 Found ${threadedMessages.length} threaded messages, checking for your replies...`
+    `  🧵 Found ${threadedMessages.length} threaded messages, checking for your replies...`,
   );
 
   for (const threadMessage of threadedMessages) {
@@ -38,7 +38,7 @@ export async function getUserRepliesFromThreads(
     } catch (replyError) {
       console.log(
         `    ❌ Error fetching replies for thread ${threadMessage.ts}:`,
-        replyError
+        replyError,
       );
     }
   }

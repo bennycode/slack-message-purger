@@ -4,7 +4,7 @@ export async function deleteMessages(
   web: WebClient,
   channelId: string,
   messages: NonNullable<ConversationsHistoryResponse["messages"]>,
-  messageType: string = "message"
+  messageType: string = "message",
 ): Promise<void> {
   for (const message of messages) {
     if (!message.ts) continue;
@@ -16,13 +16,13 @@ export async function deleteMessages(
       });
       const timestamp = new Date().toLocaleTimeString();
       console.log(
-        `    ✅ [${timestamp}] Deleted ${messageType}: ${message.ts}`
+        `    ✅ [${timestamp}] Deleted ${messageType}: ${message.ts}`,
       );
     } catch (deleteError) {
       const timestamp = new Date().toLocaleTimeString();
       console.log(
         `    ❌ [${timestamp}] Failed to delete ${messageType} ${message.ts}:`,
-        deleteError
+        deleteError,
       );
     }
   }

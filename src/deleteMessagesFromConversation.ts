@@ -6,7 +6,7 @@ import { deleteMessages } from "./deleteMessages.ts";
 export async function deleteMessagesFromConversation(
   web: WebClient,
   conversation: { id: string; name: string },
-  userId: string
+  userId: string,
 ): Promise<void> {
   console.log(`\n📂 Checking conversation: ${conversation.name}`);
 
@@ -19,7 +19,7 @@ export async function deleteMessagesFromConversation(
     }
 
     console.log(
-      `  📊 Total messages in ${conversation.name}: ${allMessages.length}`
+      `  📊 Total messages in ${conversation.name}: ${allMessages.length}`,
     );
 
     // Filter messages from the current user
@@ -27,20 +27,20 @@ export async function deleteMessagesFromConversation(
 
     // Get threaded messages and fetch user's replies
     const threadedMessages = allMessages.filter(
-      (message) => message.reply_count && message.reply_count > 0
+      (message) => message.reply_count && message.reply_count > 0,
     );
     const myReplies = await getUserRepliesFromThreads(
       web,
       conversation.id,
       threadedMessages,
-      userId
+      userId,
     );
 
     const totalMyMessages = myMessages.length + myReplies.length;
 
     if (totalMyMessages > 0) {
       console.log(
-        `  💬 Found messages from you: ${myMessages.length} top-level + ${myReplies.length} replies = ${totalMyMessages} total`
+        `  💬 Found messages from you: ${myMessages.length} top-level + ${myReplies.length} replies = ${totalMyMessages} total`,
       );
 
       // Delete top-level messages and replies
@@ -54,7 +54,7 @@ export async function deleteMessagesFromConversation(
   } catch (error) {
     console.log(
       `  ❌ Error fetching messages from ${conversation.name}:`,
-      error
+      error,
     );
   }
 }

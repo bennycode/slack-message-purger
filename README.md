@@ -1,13 +1,17 @@
 # Slack Message Purger
 
-> [!WARNING]  
-> This script will permanently delete ALL your sent messages and replies in a specified Slack workspace. This action cannot be undone. Use with extreme caution!
+> [!WARNING]\
+> This script will permanently delete ALL your sent messages and replies in a
+> specified Slack workspace. This action cannot be undone. Use with extreme
+> caution!
 
 ## What This Script Does
 
-This Deno-based script helps you bulk delete all messages you've sent in a Slack workspace. It will:
+This Deno-based script helps you bulk delete all messages you've sent in a Slack
+workspace. It will:
 
-1. Find all conversations you have access to (public channels, private channels, group messages, and direct messages)
+1. Find all conversations you have access to (public channels, private channels,
+   group messages, and direct messages)
 2. Identify all messages and thread replies authored by you
 3. Delete your messages and replies across all conversation types
 4. Provide detailed console output showing the deletion progress
@@ -16,13 +20,20 @@ This Deno-based script helps you bulk delete all messages you've sent in a Slack
 
 - Top-level messages in channels and DMs
 - Thread replies you've posted
-- Messages in public channels, private channels, group messages, and direct messages
+- Messages in public channels, private channels, group messages, and direct
+  messages
 
 ## Prerequisites
 
-- [Deno](https://deno.land/) installed on your system
+- [Deno](https://deno.land/) installed on your system (`npm install -g deno`)
 - A Slack workspace where you have permission to create apps
 - Admin or appropriate user permissions to delete your own messages
+
+Starting the app:
+
+```bash
+deno task start
+```
 
 ## Setup and Usage
 
@@ -50,7 +61,8 @@ This Deno-based script helps you bulk delete all messages you've sent in a Slack
 ### 3. Install App
 
 1. Go to **Settings** and **Install App**
-2. Once installed, you will see your **User OAuth Token** (starting with "xoxp-")
+2. Once installed, you will see your **User OAuth Token** (starting with
+   "xoxp-")
 
 ### 4. Configure the Script
 
@@ -62,4 +74,5 @@ This Deno-based script helps you bulk delete all messages you've sent in a Slack
 
 ### 5. Customize Message Types (Optional)
 
-You can modify which types of conversations to process by changing the `MESSAGE_TYPES_TO_DELETE` constant.
+You can modify which types of conversations to process by changing the
+`MESSAGE_TYPES_TO_DELETE` constant.

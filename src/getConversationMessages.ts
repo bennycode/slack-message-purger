@@ -2,7 +2,7 @@ import { type ConversationsHistoryResponse, WebClient } from "@slack/web-api";
 
 export async function getConversationMessages(
   web: WebClient,
-  channelId: string
+  channelId: string,
 ): Promise<NonNullable<ConversationsHistoryResponse["messages"]>> {
   const allMessages: NonNullable<ConversationsHistoryResponse["messages"]> = [];
   let cursor: string | undefined;
